@@ -86,7 +86,7 @@ public class FirstRatings {
             double currentMovieRating = Double.parseDouble(record.get(2));
             
             if (IDlist.indexOf(currentRaterID)==-1) {
-                Rater currentRater = new Rater(currentRaterID);
+                Rater currentRater = new PlainRater(currentRaterID);
                 ratersData.add(currentRater);
                 currentRater.addRating(currentMovieID, currentMovieRating);
             
