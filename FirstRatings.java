@@ -3,7 +3,7 @@ import java.util.*;
 import org.apache.commons.csv.*;
 
 public class FirstRatings {
-    public ArrayList<Movie> loadMovie (String filename){
+    public ArrayList<Movie> loadMovies (String filename){
         ArrayList<Movie> movieData = new ArrayList<Movie> ();
         FileResource fr = new FileResource(filename);
         for (CSVRecord record: fr.getCSVParser()){
@@ -27,7 +27,7 @@ public class FirstRatings {
     }
     
     public void testLoadMovies (){
-        ArrayList<Movie> test = loadMovie("data/ratedmoviesfull.csv");
+        ArrayList<Movie> test = loadMovies("data/ratedmoviesfull.csv");
         
         //get comedy
         int numComedyMovie = 0;
@@ -133,7 +133,7 @@ public class FirstRatings {
         //get rater with max number of ratings
         int maxNumRating = 0;
         int maxRaterCount = 0;
-        String name="";
+        String name=null;
         for (String ID : hashmap.keySet()) {
             if (maxNumRating < hashmap.get(ID).size()){
                 maxNumRating = hashmap.get(ID).size();
